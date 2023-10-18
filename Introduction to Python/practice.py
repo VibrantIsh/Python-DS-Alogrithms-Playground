@@ -1,4 +1,4 @@
-#E-1.1 Write a program to prompt a user to enter his/her name and mailing address and display the entered information on the screen.
+# E-1.1 Write a program to prompt a user to enter his/her name and mailing address and display the entered information on the screen.
 name = input("Enter your name: ")
 address = input("Enter your mailing address: ")
 
@@ -6,7 +6,7 @@ print("\nName: " + name)
 print("Mailing Address: " + address)
 
 
-#E-1.2 Write a program to compute the area of different shapes and display the information on the screen.
+# E-1.2 Write a program to compute the area of different shapes and display the information on the screen.
 import math 
 
 def rectangle_area(length, width):
@@ -53,5 +53,15 @@ while True:
 print("Goodbyeee")
 
 
+# E-1.3 Write a program to compute the factorial of a given number and display the result on the screen.
 
+#Using Math Module
+import math
+fact = int(input("Enter number: "))
+factorial = math.factorial(fact)
+print (f"{fact} factorial is: {factorial}")
+
+
+
+    
 
