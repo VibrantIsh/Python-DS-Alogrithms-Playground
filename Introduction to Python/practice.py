@@ -61,7 +61,6 @@ fact = int(input("Enter number: "))
 factorial = math.factorial(fact)
 print (f"{fact} factorial is: {factorial}")
 
-
 #Using for loop
 def factorial_loop(n):
     result = 1
@@ -72,5 +71,16 @@ def factorial_loop(n):
 num = int(input("Enter a number: "))
 result = factorial_loop(num)
 print(f"The factorial of {num} is {result}")
+
+#Recursive Style
+def loop(num):
+    if num == 0:
+        return 1
+    else:
+        result = num * loop(num - 1)
+        return result
     
+num = int(input("Enter number: "))
+factorial = loop(num)
+print(f"The factorial for {num} is {factorial}")
 
