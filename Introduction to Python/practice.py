@@ -174,6 +174,16 @@ print("The words in sorted order are: ")
 for w in words:
     print(w)
 
+#E-1.10 Write a program to find the sum of only integer numbers in a list. For noninteger numbers, an exception is caught.
+number = input("Enter a list of number seperated by a apce: ")
+number.split()
+sum = 0
+for n in number:
+    try:
+        intnum = int(n)
+        sum = sum + intnum
+    except ValueError:
+        print("Enter could not be converted into integer. Not Valid")
 
 
 
