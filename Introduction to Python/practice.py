@@ -123,4 +123,44 @@ for char in text:
 
 print("Number of vowels in the text are:", count)
 
+#E-1.8 Write a program that returns the Chinese zodiac sign of a person where year of birth is entered through keyboard.
+def zodiac():
+    if (year - 1900) % 12 == 0:
+        return 'Rat'
+    elif (year - 1900) % 12 == 1:
+        return 'Ox'
+    elif (year - 1900) % 12 == 2:
+        return 'Tiger'
+    elif (year - 1900) % 12 == 3:
+        return 'Rabbit'
+    elif (year - 1900) % 12 == 4:
+        return 'Dragon'
+    elif (year - 1900) % 12 == 5:
+        return 'Snake'
+    elif (year - 1900) % 12 == 6:
+        return 'Horse'
+    elif (year - 1900) % 12 == 7:
+        return 'Goat'
+    elif (year - 1900) % 12 == 8:
+        return 'Monkey'
+    elif (year - 1900) % 12 == 9:
+        return 'Rooster'
+    elif (year - 1900) % 12 == 10:
+        return 'Dog'
+    elif (year - 1900) % 12 == 10:
+        return 'Pig'
+while True:
+    print("Enter your year of birth")
+    print("For example : 2004")
+    year = int(input("Enter here: "))
+    print(f"You're born in {year}")
+    print ("Your Chinese Zodiac animal is:",zodiac())
+    decision = input("Do you want to continue (Yes/No): ").lower()
+    if decision == 'no':
+        break
+
+print("GoodByeeeee")
+
+
+
 
