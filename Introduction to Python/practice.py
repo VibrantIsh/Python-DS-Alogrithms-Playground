@@ -95,3 +95,13 @@ def find_avg(n):
 average = find_avg(num)
 print(f"The average for {num} natural numbers is {average}")
 
+# E-1.5 Write a program to find the GCD of two numbers.
+def gcd_recursive(a, b):
+    if b == 0:
+        return a
+    return gcd_recursive(b, a % b)
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+result = gcd_recursive(num1, num2)
+print(f"The GCD of {num1} and {num2} is {result}")
+
