@@ -84,3 +84,14 @@ num = int(input("Enter number: "))
 factorial = loop(num)
 print(f"The factorial for {num} is {factorial}")
 
+# E-1.4 Write  a program to find the =avg of N natural numbers where the value of N is entered through keyboard.
+def find_avg(n):
+    total_sum = 0
+    for num in range(1, n + 1):
+        total_sum += num
+    avg = total_sum / n
+    return avg
+
+average = find_avg(num)
+print(f"The average for {num} natural numbers is {average}")
+
