@@ -161,6 +161,20 @@ while True:
 
 print("GoodByeeeee")
 
+# E-1.9 Write a program to find the number of words in the text entered by the user and then to sort the words.
+text = input("Enter the text here: ")
+words = text.split()
+count = 0
+for i in words:
+    count += 1
+print(f"The Total word cound is {count}")
+
+words.sort()
+print("The words in sorted order are: ")
+for w in words:
+    print(w)
+
+
 
 
 
