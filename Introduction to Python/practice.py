@@ -112,3 +112,15 @@ num2 = int(input("Enter the second number: "))
 gcd = math.gcd(num1, num2)
 print(gcd)
 
+# E-1.7 Write a program that returns the number of vowels in a text where the text is entered through keyboard.
+text = input("Enter your text: ")
+vowels = ['a', 'e', 'i', 'o', 'u']
+count = 0
+
+for char in text:
+    if char in vowels:
+        count += 1
+
+print("Number of vowels in the text are:", count)
+
+
