@@ -39,4 +39,23 @@ Data = [1, 3, 8, 9, 0, 6, 76, 90, 567, 876, 2 , 3, 5]
 result = minmx(Data)
 print(result)
 
+#R-1.4 Write a short Python function that takes a positive integer n and returns the sum of the squares of all the even positive integers smaller than n.
+num = int(input("Enter a number: "))
+if num <= 0:
+    raise ValueError("Invalid Number")
+
+def sum_of_sqs(n):
+
+    total = 0
+
+    for i in range(2, n, 2):
+        total += i ** 2
+    return total
+    
+result = sum_of_sqs(num)
+print(result)
+
+#R-1.5 Give a single command that computes the sum from Exercise R-1.4, relying on Python's comprehension syntax and the built-in sum function.
+result = sum(x ** 2 for x in range(2, num, 2))
+print(result) 
         
