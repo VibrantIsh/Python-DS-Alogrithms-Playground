@@ -71,3 +71,8 @@ k = -1
 element_k = s[k]
 print(f"s[-1] = {element_k}")
 
+# R-1.7 What parameters should be sent to the range constructor, to produce a range with values 8, 6, 4, 2, 0,-2,-4,-6, -8? how to use Python's list comprehension syntax to produce the list
+list_formation = [i for i in range(8, -10, -2)]
+print (list_formation)
+
+
