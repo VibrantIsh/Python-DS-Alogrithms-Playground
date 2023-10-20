@@ -15,3 +15,19 @@ def is_even_product(lst):
     else:
         return False
 
+# C-1.12 Write a Python function that takes a sequence of numbers and returns the count of unique numbers (that is, numbers that are distinct)
+def count_unique_elements(lst):
+    unique_elements = []
+    for i in lst:
+        if i not in unique_elements:
+            unique_elements.append(i)
+    return len(unique_elements)
+
+my_list = [1, 2, 4, 7, 8, 9, 0, 6, 7, 5, 3, 1]
+result = count_unique_elements(my_list)
+print(result)
+
+# using set() function.
+my_list = [1, 2, 2, 3, 4, 4, 5]
+unique_elements = set(my_list)
+print(unique_elements)  # Output: {1, 2, 3, 4, 5}
