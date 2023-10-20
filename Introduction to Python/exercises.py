@@ -75,4 +75,7 @@ print(f"s[-1] = {element_k}")
 list_formation = [i for i in range(8, -10, -2)]
 print (list_formation)
 
+# R-1.8 Demonstrate  how to use Python's list comprehension syntax to produce the list [1, 2, 4, 8, 16, 32, 64, 128, 256].
+mylist = [2 ** i for i in range(9)]
+print(mylist)
 
