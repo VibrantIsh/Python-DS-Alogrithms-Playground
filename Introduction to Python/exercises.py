@@ -21,3 +21,22 @@ def check(n):
     
 result = check(num)
 print(result)
+
+# R-1.3 Write a short Python function, minmax (data), that takes a sequence of three or more numbers, and returns the smallest and largest numbers, in the form of a tuple of length two, Do not use the built-in functions min or max in implementing your solution.
+def minmx(Data):
+    if len(Data) < 3:
+        raise ValueError("Input sequence must contain at least three numbers")
+    min_value, max_value = Data [0], Data [0]
+    
+    for number in Data[1:]:
+        if number < min_value:
+            min_value = number
+        if number > max_value:
+            max_value = number
+    return min_value, max_value
+
+Data = [1, 3, 8, 9, 0, 6, 76, 90, 567, 876, 2 , 3, 5]
+result = minmx(Data)
+print(result)
+
+        
