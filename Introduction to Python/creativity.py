@@ -31,3 +31,14 @@ print(result)
 my_list = [1, 2, 2, 3, 4, 4, 5]
 unique_elements = set(my_list)
 print(unique_elements)  
+
+# C-1.14 Demonstrate how to use Python's list comprehension syntax to produce the list ['a', 'b', 'c', 'z'] but without having to type all 26 such character literally.
+#Importing String Module.
+import string
+result = list(string.ascii_lowercase)
+print(result)
+
+#other way
+alphas = list(chr(ord('a') +i) for i in range(26))
+print(alphas)
+
