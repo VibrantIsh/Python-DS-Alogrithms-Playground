@@ -58,4 +58,14 @@ print(result)
 #R-1.5 Give a single command that computes the sum from Exercise R-1.4, relying on Python's comprehension syntax and the built-in sum function.
 result = sum(x ** 2 for x in range(2, num, 2))
 print(result) 
-        
+
+#R-1.6 Python allows negative integers to be used as indices into a sequence, such as a string. If string s has length 1, and expression s [k] is used for index -n < k <0, what is the equivalent index j≥ 0 such that s [1] references the same element?
+# Define a string with length 1
+s = "T"
+j = 0
+element_j = s[j]
+print(f"s[0] = {element_j}")
+k = -1
+element_k = s[k]
+print(f"s[-1] = {element_k}")
+
