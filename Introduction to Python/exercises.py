@@ -79,3 +79,8 @@ print (list_formation)
 mylist = [2 ** i for i in range(9)]
 print(mylist)
 
+#R-1.9 Python's random module includes a function choice (data) that returns a random element from a non-empty sequence. The random module includes a more basic function randrange, with parameterization similar to the built-in range function, that returns a random choice from the given range. Using only the randrange function, implement your own version of the choice function.
+import random
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+choice = random.randrange(len(my_list))
+print(choice)
