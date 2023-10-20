@@ -42,3 +42,16 @@ print(result)
 alphas = list(chr(ord('a') +i) for i in range(26))
 print(alphas)
 
+# C-1.16 Write a Python program that repeatedly reads lines from standard input until an EOFError is raised, and then outputs those lines in reverse order (a user can indicate end of input by typing ctrl-D.
+lines = []
+try:
+    while True:
+        line = input("Enter a line (or press Ctrl-D to finish): ")
+        lines.append(line)
+except EOFError:
+    pass
+
+lines.reverse()
+for line in lines:
+    print(line)
+
