@@ -59,7 +59,7 @@ for line in lines:
 my_list = [1, 2, 3, 4, 5]
 
 try:
-    index = 10  # This index is out of bounds
+    index = 10 
     value = 100
     my_list[index] = value
 except IndexError:
