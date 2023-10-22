@@ -77,5 +77,12 @@ s = "Let's try, Mike."
 result = remove_punctuation(s)
 print(result)
 
+# C-1.20 Write a short program that takes as input three integers, a, b, and c, from the console anddetermines if they can be used in a correct arithmetic formula (in the given order), like "a + b = c" , "a = b - c" or a * b = c.
+try:
+    a = int(input("Enter the value of 'a': "))
+    b = int(input("Enter the value of 'b': "))
+    c = int(input("Enter the value of 'c': "))
+except ValueError:
+    print("One or more of the inputs is not an integer.")
 
 
