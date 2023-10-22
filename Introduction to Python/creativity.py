@@ -64,3 +64,18 @@ try:
     my_list[index] = value
 except IndexError:
     print("Don't try buffer overflow attacks in Python!")
+
+#C-1.19 Write a short Python function that takes a strings, representing a sentence, and returns a copy of the string with all punctuation removed. For example, if given the string "Let's try, Mike.", this function would return "Lets try Mike".
+def remove_punctuation(sentence):
+    punctuation = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
+    
+    cleaned_sentence = ''.join(char for char in sentence if char not in punctuation)
+    
+    return cleaned_sentence
+
+s = "Let's try, Mike."
+result = remove_punctuation(s)
+print(result)
+
+
+
