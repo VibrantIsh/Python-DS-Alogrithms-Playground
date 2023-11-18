@@ -121,5 +121,34 @@ print(a.cAge(date(1980, 3, 19)), 'years')
 # E-2.5 Write an abstract class Animal with an abstract method makesSound. The abstract class is inherited by classes representing different animals and defines the abstract method to display the kind of sound those animals produce.
 
 
-
+from abc import ABC, abstractmethod
+class Animal (ABC):
+    def makesound(self):
+        pass
+class Apes(Animal):
+    def makesound(self):
+        print("Apes Gibber......")
+        
+class Snake(Animal):
+    def makesound(self):
+        print("Snake hiss......")
+class Dog(Animal):
+    def makesound(self):
+        print("Dog bark.......")
+class Tiger(Animal):
+    def makesound(self):
+        print("Tiger roar......")
+class Bear(Animal):
+    def makesound(self):
+        print("Bear Growl......")
+ape = Apes()
+ape.makesound()
+snakes = Snake()
+snakes.makesound()
+dogs = Dog()
+dogs.makesound()
+tigers = Tiger()
+tigers.makesound()
+bears = Bear()
+bears.makesound()
 
