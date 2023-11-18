@@ -92,9 +92,31 @@ try:
     yr = int(date.split("."[2]))        
 except ValueError:
     print("Date entered is in incorrect format", date)
-d = Date(dd, mm, yr
-         )    
-            
+d = Date(dd, mm, yy   )    
+
+
+
+#E-2.4 Write a Python class that finds the age of a person.
+from datetime import date
+
+class age:
+    def __init__(self):
+        pass
+    
+    def cAge(self, bD):
+        td = date.today()
+        try:
+            b = bD.replace(year=td.year)
+        except ValueError:
+            b = bD.replace(year=td.year, month=bD.month + 1, day=1)
+
+        if b > td:
+            return td.year - bD.year - 1
+        else:
+            return td.year - bD.year
+a = age()
+print(a.cAge(date(1980, 3, 19)), 'years')
+
 
 
 
