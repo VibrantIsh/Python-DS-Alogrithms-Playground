@@ -68,3 +68,33 @@ while 1:
 
 
 
+#E-2.3 Write a Python class that is initialized with a date and displays the date if the date entered is valid
+import datetime
+class Date:
+    def __init__(self, dd, mm, yr):
+        self.dd = dd
+        self.mm = mm
+        self.yr = yr
+        self.__checkDate()
+    def __checkDate(self):
+        isValid = True
+        try:
+            datetime.datetime(self.yr, self.mm, self.dd)
+        except ValueError:
+            isValid = False
+        if isValid:
+            print("Input Date is Valid: ", self.dd, ".", self.mm, ".", self.yr)
+        else:print("Date is Invalid")
+try:
+    date = input("Enter the date, month, year in the following format[dd.mm.yyyy]: ")
+    dd = int(date.split("."[0]))
+    mm = int(date.split("."[1]))
+    yr = int(date.split("."[2]))        
+except ValueError:
+    print("Date entered is in incorrect format", date)
+d = Date(dd, mm, yr
+         )    
+            
+
+
+
