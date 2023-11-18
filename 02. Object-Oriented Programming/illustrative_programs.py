@@ -118,5 +118,8 @@ a = age()
 print(a.cAge(date(1980, 3, 19)), 'years')
 
 
+# E-2.5 Write an abstract class Animal with an abstract method makesSound. The abstract class is inherited by classes representing different animals and defines the abstract method to display the kind of sound those animals produce.
+
+
 
 
