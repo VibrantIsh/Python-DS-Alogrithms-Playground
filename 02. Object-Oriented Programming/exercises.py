@@ -262,3 +262,27 @@ h.r()
 h.j()
 
 
+# R-2.15 Give a short fragment of Python code that uses the progression classes from Section 2.4.2 to find the 8th value of a Fibonacci progression that starts with 2 and 2 as its first two values.
+class F:
+    def __init__(self, f=0, s=1):
+        self.f = f
+        self.s = s
+
+    def g(self, n):
+        if n == 1:
+            return self.f
+        elif n == 2:
+            return self.s
+        else:
+            p = self.f
+            c = self.s
+            for _ in range(2, n):
+                p, c = c, p + c
+            return c
+
+fp = F(2, 2)
+r = fp.g(8)
+print(r)
+
+
+
