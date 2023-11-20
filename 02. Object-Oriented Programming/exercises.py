@@ -49,3 +49,44 @@ lim = 1000
 crd = CrdtCard("1234", lim)
 crd.charge(1200)
 
+# R-2.8 Implement the sub method for the Vector class of Section 2.3.3, so that the expression u - v returns a new vector instance representing the difference between two vectors.
+class Vec:
+    def __init__(self, dim):
+        self.dim = dim
+        self.coords = [0] * dim
+
+    def __repr__(self):
+        return f"Vec({self.coords})"
+
+    def __len__(self):
+        return len(self.coords)
+
+    def __getitem__(self, idx):
+        return self.coords[idx]
+
+    def __setitem__(self, idx, val):
+        self.coords[idx] = val
+
+    def s(self, o):
+        if len(self) != len(o):
+            raise ValueError("Vectors must have the same dimension for subtraction")
+        
+        r = Vec(len(self))
+        for i in range(len(self)):
+            r[i] = self[i] - o[i]
+        
+        return r
+u = Vec(3)
+u[0] = 4
+u[1] = 2
+u[2] = 7
+
+v = Vec(3)
+v[0] = 1
+v[1] = 3
+v[2] = 5
+
+d = u.s(v)
+print(d)
+
+
