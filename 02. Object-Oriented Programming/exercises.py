@@ -31,3 +31,21 @@ print("Initial balance (Zero balance):", crd_zero_blnc.blnc)
 
 crd_nonzero_blnc = CrdtCard("9876543210", "Jane Smith", "11/24", "5678", 500)
 print("Initial balance (Nonzero balance):", crd_nonzero_blnc.blnc)
+
+# R-2.7 Modify the declaration of the first for loop in the CreditCard tests, from Code Fragment 2.3, so that it will eventually cause exactly one of the three credit cards to go over its credit limit. Which credit card is it
+class CrdtCard:
+    def __init__(self, num, limit):
+        self.num = num
+        self.limit = limit
+        self.blnc = 0
+
+    def charge(self, amnt):
+        if self.blnc + amnt > self.limit:
+            print(f"Limit reached for card {self.num}")
+        else:
+            self.blnc += amnt
+
+lim = 1000
+crd = CrdtCard("1234", lim)
+crd.charge(1200)
+
