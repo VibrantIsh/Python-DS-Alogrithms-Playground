@@ -89,4 +89,45 @@ v[2] = 5
 d = u.s(v)
 print(d)
 
+# R-2.9 In Section 2.3.3, we note that our Vector class supports a syntax such as v=u+[ 5, 3 , 10, -2, 1], in which the sum of a vector and list returns a new vector. However, the syntax v=[ 5, 3 10, -2, 1] + u is illegal. Explain how the Vector class definition can be revised so that this syntax generates a new vector.
+class Vec:
+    def __init__(self, dim):
+        self.dim = dim
+        self.coords = [0] * dim
+
+    def __repr__(self):
+        return f"Vec({self.coords})"
+
+    def __len__(self):
+        return len(self.coords)
+
+    def __getitem__(self, idx):
+        return self.coords[idx]
+
+    def __setitem__(self, idx, val):
+        self.coords[idx] = val
+
+    def __add__(self, o):
+        if len(self) != len(o):
+            raise ValueError("Vectors must have the same dimension for addition")
+        
+        r = Vec(len(self))
+        for i in range(len(self)):
+            r[i] = self[i] + o[i]
+        
+        return r
+
+    def __radd__(self, o):
+        return self + o
+u = Vec(5)
+u[0] = 1
+u[1] = 2
+u[2] = 3
+u[3] = 4
+u[4] = 5
+
+v = [5, 3, 10, -2, 1] + u
+print(v)
+
+
 
