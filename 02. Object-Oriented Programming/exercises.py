@@ -131,3 +131,42 @@ print(v)
 
 
 
+# R-2.10 Implement the_mul method for the Vector class of Section 2.3.3, so that the expression v three returns a new vector with coordinates that are three times the respective coordinates of v. Also provide additional support for syntax 3v
+class Vec:
+    def __init__(self, dim):
+        self.dim = dim
+        self.coords = [0] * dim
+
+    def __repr__(self):
+        return f"Vec({self.coords})"
+
+    def __len__(self):
+        return len(self.coords)
+
+    def __getitem__(self, idx):
+        return self.coords[idx]
+
+    def __setitem__(self, idx, val):
+        self.coords[idx] = val
+
+    def __mul__(self, s):
+        return Vec(len(self), [c * s for c in self.coords])
+
+    def __rmul__(self, s):
+        return self * s
+
+v = Vec(4)
+v[0] = 1
+v[1] = 2
+v[2] = 3
+v[3] = 4
+
+r1 = v * 3
+print(r1)
+
+r2 = 3 * v
+print(r2)
+
+
+
+
