@@ -214,3 +214,51 @@ print(v2)
 v3 = Vec((1, 2, 3, 4))
 print(v3)
 
+#  R-2.14 Implement a class inheritance program for the following set of classes:
+#• Class Goat extends object and adds an instance variable_tail and methods milk () and jump (). • Class Pig extends object and adds an instance variable_nose and methods
+#eat (food) and wallow (). • Class Horse extends object and adds instance variables_height and_color, and methods run () and jump ().
+
+class G:
+    def __init__(self, t):
+        self.t = t
+
+    def m(self):
+        print("Goat is milking.")
+
+    def j(self):
+        print("Goat is jumping.")
+
+class P:
+    def __init__(self, n):
+        self.n = n
+
+    def e(self, f):
+        print(f"Pig is eating {f}.")
+
+    def w(self):
+        print("Pig is wallowing.")
+
+class H:
+    def __init__(self, h, c):
+        self.h = h
+        self.c = c
+
+    def r(self):
+        print("Horse is running.")
+
+    def j(self):
+        print("Horse is jumping.")
+
+g = G("short")
+g.m()
+g.j()
+
+p = P("short")
+p.e("vegetables")
+p.w()
+
+h = H("tall", "brown")
+h.r()
+h.j()
+
+
