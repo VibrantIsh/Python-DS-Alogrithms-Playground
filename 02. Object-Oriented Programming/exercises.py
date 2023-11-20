@@ -168,5 +168,29 @@ r2 = 3 * v
 print(r2)
 
 
+# R-2.11 Implement the mul method for the Vector class of Section 2.3.3, so that sion uv returns a scalar that represents the dot product of the vectors, that is, sum i = 1 to d u i * v i .
+class Vec:
+    def __init__(self, dim):
+        self.dim = dim
+        self.coords = [0] * dim
+
+    def __repr__(self):
+        return f"Vec({self.coords})"
+
+    def __getitem__(self, idx):
+        return self.coords[idx]
+
+    def m(self, o):
+        return sum(a * b for a, b in zip(self.coords, o.coords))
+
+# Example usage:
+u = Vec(3)
+u.coords = [4, 2, 7]
+
+v = Vec(3)
+v.coords = [1, 3, 5]
+
+d = u.m(v)
+print(d)
 
 
