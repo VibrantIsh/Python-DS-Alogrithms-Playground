@@ -17,3 +17,17 @@ except ValueError as e:
 
 print("Balance after invalid payment:", crd.blnc)
 
+# R-2.6 The Credit Card class of Section 2.3 initializes the balance of a new account to zero. Modify that class so that a new account can be given a nonzero balance using an optional fifth parameter to the constructor. The four-parameter constructor syntax should continue to pro- duce an account with zero balance.
+class CrdtCard:
+    def __init__(self, num, hldr, exp_date, sec_code, blnc=0):
+        self.num = num
+        self.hldr = hldr
+        self.exp_date = exp_date
+        self.sec_code = sec_code
+        self.blnc = blnc
+
+crd_zero_blnc = CrdtCard("1234567890", "John Doe", "12/25", "1234")
+print("Initial balance (Zero balance):", crd_zero_blnc.blnc)
+
+crd_nonzero_blnc = CrdtCard("9876543210", "Jane Smith", "11/24", "5678", 500)
+print("Initial balance (Nonzero balance):", crd_nonzero_blnc.blnc)
