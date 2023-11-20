@@ -284,5 +284,46 @@ fp = F(2, 2)
 r = fp.g(8)
 print(r)
 
+# R-2.19 The collections. Sequence abstract base class does not provide support for compar- two sequences to each other. Modify our Sequence class from Code Fragment 2.14 to include a definition for the leg method, to support lexicographic comparison seql <= seq2.
+from abc import ABC, abstractmethod
+
+class seq(ABC):
+    @abstractmethod
+    def __len__(self):
+        pass
+    
+    @abstractmethod
+    def __getitem__(self, j):
+        pass
+    
+    def __le__(self, other):
+        if len(self) != len(other):
+            raise ValueError("sequences must have same length for comparison")
+        
+        for i in range(len(self)):
+            if self[i] < other[i]:
+                return True
+            elif self[i] > other[i]:
+                return False
+        return True
+
+class mySeq(seq):
+    def __init__(self, elements):
+        self._elements = list(elements)
+    
+    def __len__(self):
+        return len(self._elements)
+    
+    def __getitem__(self, j):
+        return self._elements[j]
+
+seq1 = mySeq([1, 2, 3])
+seq2 = mySeq([1, 2, 4])
+seq3 = mySeq([1, 2, 3])
+
+print(seq1 <= seq2)
+print(seq1 <= seq3)
+print(seq2 <= seq1)
+
 
 
