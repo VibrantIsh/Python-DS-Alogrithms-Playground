@@ -182,8 +182,6 @@ class Vec:
 
     def m(self, o):
         return sum(a * b for a, b in zip(self.coords, o.coords))
-
-# Example usage:
 u = Vec(3)
 u.coords = [4, 2, 7]
 
