@@ -129,3 +129,33 @@ pcc.p_m()
 print(pcc.g_b())
 
 
+# C-2.25 Write a Python class that extends the Progression class so that each value in the pro- gression is the absolute value of the difference between the previous two values. You should include a constructor that accepts a pair of numbers as the first two values, using 2 and 200 as the defaults.
+class P:
+    def __init__(self, f=0):
+        self.c = f
+
+    def a(self):
+        self.c += 1
+
+    def __next__(self):
+        if self.c is None:
+            raise StopIteration()
+        else:
+            val = self.c
+            self.a()
+            return val
+
+    def __iter__(self):
+        return self
+
+class ADP(P):
+    def __init__(self, f=2, s=200):
+        super().__init__(f)
+        self.p = s
+
+    def a(self):
+        self.p, self.c = self.c, abs(self.c - self.p)
+
+ad_prog = ADP()
+result = [next(ad_prog) for _ in range(10)]
+print(result)
