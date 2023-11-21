@@ -56,3 +56,31 @@ r = R(0, 10000000)
 print(2 in r)
 print(9999999 in r)
 
+# C-2.22 The PredatoryCreditCard class of Section 2.4.1 provides a process_month method that models the completion of a monthly cycle. Modify the class so that once a customer has made ten calls to charge in the current month, each additional call to that function results in an additional $1 surcharge.
+class PCC(CreditCard):
+    def __init__(self, c, b, a, l, r):
+        super().__init__(c, b, a, l)
+        self.r = r
+        self.m = 0
+
+    def charge(self, p):
+        s = super().charge(p)
+        if s:
+            self.m += 1
+            if self.m > 10:
+                self._balance += 1
+        return s
+
+    def process_month(self):
+        self.m = 0
+        super().process_month()
+
+pcc = PCC("John Doe", "Bank X", "1234 5678 9101 1121", 1000, 0.05)
+
+for _ in range(12):
+    pcc.charge(100)
+
+print(pcc.get_balance())
+pcc.process_month()
+print(pcc.get_balance())
+
