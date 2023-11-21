@@ -84,3 +84,48 @@ print(pcc.get_balance())
 pcc.process_month()
 print(pcc.get_balance())
 
+
+# C-2.24 At the close of Section 2.4.1, we suggest a model in which the Credit Card class supports a nonpublic method,_set_balance (b), that could be used by subclasses to affect a change to the balance, without directly accessing the_balance data member. Implement such a model, revising both the Creditcard and PredatoryCreditCard classes accordingly.
+class CC:
+    def __init__(self, c, b, a, l):
+        self.c = c
+        self.b = b
+        self.a = a
+        self.l = l
+        self._b = 0
+
+    def ch(self, p):
+        if p + self._b > self.l:
+            return False
+        else:
+            self._b += p
+            return True
+
+    def mk_pmt(self, a):
+        self._b -= a
+
+    def g_b(self):
+        return self._b
+
+    def _s_b(self, new_b):
+        self._b = new_b
+
+
+class PCC(CC):
+    def __init__(self, c, b, a, l, apr):
+        super().__init__(c, b, a, l)
+        self.apr = apr
+
+    def p_m(self):
+        if self._b > 0:
+            mf = pow(1 + self.apr, 1 / 12)
+            self._s_b(self._b * mf)
+
+
+pcc = PCC("Ramesh Kumar", "Bank X", "1234 5678 9101 1121", 1000, 0.05)
+pcc.ch(500)
+print(pcc.g_b())
+pcc.p_m()
+print(pcc.g_b())
+
+
